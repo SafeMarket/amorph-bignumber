@@ -1,6 +1,6 @@
 {
   "name": "amorph-bignumber",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Amorph converters for bignumber, hex, and number",
   "main": "index.js",
   "directories": {
