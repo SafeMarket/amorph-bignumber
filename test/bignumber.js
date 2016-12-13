@@ -131,6 +131,13 @@ describe('converters', () => {
       expect(bignumber).to.be.instanceOf(Bignumber)
       expect(bignumber).to.be.bignumber.equal(255.5)
     })
+
+    it('test 7', () => {
+      const bignumber = converters.get(['hex', 'bignumber'])('')
+      expect(bignumber).to.be.instanceOf(Bignumber)
+      expect(bignumber).to.be.bignumber.equal(0)
+    })
+
   })
 
   describe('hex.prefixed-bignumber', () => {
@@ -168,6 +175,12 @@ describe('converters', () => {
       const bignumber = converters.get(['hex.prefixed', 'bignumber'])('0xff.8')
       expect(bignumber).to.be.instanceOf(Bignumber)
       expect(bignumber).to.be.bignumber.equal(255.5)
+    })
+
+    it('test 7', () => {
+      const bignumber = converters.get(['hex.prefixed', 'bignumber'])('0x')
+      expect(bignumber).to.be.instanceOf(Bignumber)
+      expect(bignumber).to.be.bignumber.equal(0)
     })
   })
 

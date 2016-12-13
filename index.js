@@ -15,10 +15,16 @@ nobject.set(['bignumber', 'hex'], (bignumber) => {
 })
 
 nobject.set(['hex', 'bignumber'], (hex) => {
+  if (hex === '') {
+    return new Bignumber(0)
+  }
   return new Bignumber(hex, 16)
 })
 
 nobject.set(['hex.prefixed', 'bignumber'], (hexPrefixed) => {
+  if (hexPrefixed === '0x') {
+    return new Bignumber(0)
+  }
   return new Bignumber(hexPrefixed)
 })
 
