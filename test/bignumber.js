@@ -57,6 +57,21 @@ describe('converters', () => {
 
   })
 
+  describe('number.string-bignumber', () => {
+    it('test 1', () => {
+      const bignumber = converters.get(['number.string', 'bignumber'])('3')
+      expect(bignumber).to.be.instanceOf(Bignumber)
+      expect(bignumber).to.be.bignumber.equal(3)
+    })
+
+    it('test 2', () => {
+      const bignumber = converters.get(['number', 'bignumber'])('2.5')
+      expect(bignumber).to.be.instanceOf(Bignumber)
+      expect(bignumber).to.be.bignumber.equal(2.5)
+    })
+
+  })
+
   describe('bignumber-hex', () => {
     it('test 1', () => {
       const hex = converters.get(['bignumber', 'hex'])(new Bignumber(0))

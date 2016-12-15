@@ -10,6 +10,10 @@ nobject.set(['number', 'bignumber'], (number) => {
   return new Bignumber(number)
 })
 
+nobject.set(['number.string', 'bignumber'], (number) => {
+  return new Bignumber(number)
+})
+
 nobject.set(['bignumber', 'hex'], (bignumber) => {
   return bignumber.toString(16)
 })
