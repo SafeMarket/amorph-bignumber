@@ -57,6 +57,23 @@ describe('converters', () => {
 
   })
 
+  describe('bignumber-number.string', () => {
+    it('test 1', () => {
+      const bignumber = new Bignumber(3)
+      const numberString = converters.get(['bignumber', 'number.string'])(bignumber)
+      expect(typeof numberString).to.equal('string')
+      expect(numberString).to.equal('3')
+    })
+
+    it('test 2', () => {
+      const bignumber = new Bignumber(2.5)
+      const numberString = converters.get(['bignumber', 'number.string'])(bignumber)
+      expect(typeof numberString).to.equal('string')
+      expect(numberString).to.equal('2.5')
+    })
+
+  })
+
   describe('number.string-bignumber', () => {
     it('test 1', () => {
       const bignumber = converters.get(['number.string', 'bignumber'])('3')
@@ -65,7 +82,7 @@ describe('converters', () => {
     })
 
     it('test 2', () => {
-      const bignumber = converters.get(['number', 'bignumber'])('2.5')
+      const bignumber = converters.get(['number.string', 'bignumber'])('2.5')
       expect(bignumber).to.be.instanceOf(Bignumber)
       expect(bignumber).to.be.bignumber.equal(2.5)
     })
