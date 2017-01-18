@@ -1,6 +1,7 @@
 const chai = require('chai')
 const expect = chai.expect
-const converters = require('../')
+const plugin = require('../')
+const converters = plugin.converters
 const Nobject = require('nobject')
 const Bignumber = require('bignumber.js')
 
@@ -213,6 +214,22 @@ describe('converters', () => {
       const bignumber = converters.get(['hex.prefixed', 'bignumber'])('0x')
       expect(bignumber).to.be.instanceOf(Bignumber)
       expect(bignumber).to.be.bignumber.equal(0)
+    })
+  })
+
+  describe('equivalenceTests', () => {
+    describe('bignumber', () => {
+      it('bn("1") should equal bn(1)', () => {
+        expect(
+          plugin.equivalenceTests.bignumber(new Bignumber('1'), new Bignumber(1))
+        ).to.equal(true)
+      })
+
+      it('bn(0) should NOT equal bn(1)', () => {
+        expect(
+          plugin.equivalenceTests.bignumber(new Bignumber(0), new Bignumber(1))
+        ).to.equal(false)
+      })
     })
   })
 

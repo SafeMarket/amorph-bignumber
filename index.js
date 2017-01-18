@@ -37,4 +37,12 @@ nobject.set(['hex.prefixed', 'bignumber'], (hexPrefixed) => {
 })
 
 
-module.exports = nobject
+module.exports = {
+  pluginVersion: 1,
+  converters: nobject,
+  equivalenceTests: {
+    bignumber: (a, b) => {
+      return a.equals(b)
+    }
+  }
+}
