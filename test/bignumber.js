@@ -94,19 +94,19 @@ describe('converters', () => {
     it('test 1', () => {
       const hex = converters.get(['bignumber', 'hex'])(new Bignumber(0))
       expect(hex).to.be.a('string')
-      expect(hex).to.equal('0')
+      expect(hex).to.equal('')
     })
 
     it('test 2', () => {
       const hex = converters.get(['bignumber', 'hex'])(new Bignumber(1))
       expect(hex).to.be.a('string')
-      expect(hex).to.equal('1')
+      expect(hex).to.equal('01')
     })
 
     it('test 3', () => {
       const hex = converters.get(['bignumber', 'hex'])(new Bignumber(10))
       expect(hex).to.be.a('string')
-      expect(hex).to.equal('a')
+      expect(hex).to.equal('0a')
     })
 
     it('test 4', () => {
