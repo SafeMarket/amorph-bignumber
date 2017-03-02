@@ -3,7 +3,7 @@ const nobject = new Nobject
 const Bignumber = require('bignumber.js')
 
 function normalizeHex(hex) {
-  return hex.length % 2 === 0 ? hex : hex.slice(0, -1) + '0' + hex.slice(-1)
+  return hex.length % 2 === 0 ? hex : '0' + hex
 }
 
 nobject.set(['bignumber', 'number'], (bignumber) => {

@@ -126,6 +126,12 @@ describe('converters', () => {
       expect(hex).to.be.a('string')
       expect(hex).to.equal('ff.8')
     })
+
+    it('test 7', () => {
+      const hex = converters.get(['bignumber', 'hex'])(new Bignumber(3000))
+      expect(hex).to.be.a('string')
+      expect(hex).to.equal('0bb8')
+    })
   })
 
   describe('hex-bignumber', () => {
