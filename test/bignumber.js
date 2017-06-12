@@ -90,6 +90,21 @@ describe('converters', () => {
 
   })
 
+  describe('number.string-number', () => {
+    it('test 1', () => {
+      const number = converters.get(['number.string', 'number'])('3')
+      expect(number).to.be.a('number')
+      expect(number).to.equal(3)
+    })
+
+    it('test 2', () => {
+      const number = converters.get(['number.string', 'number'])('2.5')
+      expect(number).to.be.a('number')
+      expect(number).to.equal(2.5)
+    })
+
+  })
+
   describe('bignumber-hex', () => {
     it('test 1', () => {
       const hex = converters.get(['bignumber', 'hex'])(new Bignumber(0))

@@ -22,6 +22,10 @@ nobject.set(['number.string', 'bignumber'], (number) => {
   return new Bignumber(number)
 })
 
+nobject.set(['number.string', 'number'], (numberString) => {
+  return parseFloat(numberString, 10)
+})
+
 nobject.set(['bignumber', 'hex'], (bignumber) => {
   if (bignumber.eq(0)) {
     return ''
