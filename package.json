@@ -21,11 +21,11 @@
   "homepage": "https://github.com/SafeMarket/amorph-bignumber#readme",
   "devDependencies": {
     "chai": "^3.5.0",
-    "chai-bignumber": "^2.0.0",
     "mocha": "^3.2.0"
   },
   "dependencies": {
-    "bignumber.js": "^3.0.1",
-    "nobject": "0.0.3"
+    "amorph-converter": "^1.0.0",
+    "amorph-hex": "^3.0.0",
+    "bignumber.js": "^3.0.1"
   }
 }
