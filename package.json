@@ -24,8 +24,9 @@
     "mocha": "^3.2.0"
   },
   "dependencies": {
-    "amorph-converter": "^1.0.0",
+    "amorph-converter": "^2.0.0",
     "amorph-hex": "^3.0.0",
-    "bignumber.js": "^3.0.1"
+    "bignumber.js": "^3.0.1",
+    "defunction": "^5.5.0"
   }
 }
