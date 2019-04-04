@@ -1,6 +1,8 @@
-const converters = require('./')
+const Converters = require('./')
 const chai = require('chai')
 const Bignumber = require('bignumber.js')
+
+const converters = new Converters(Bignumber)
 
 chai.should()
 

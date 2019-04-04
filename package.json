@@ -20,13 +20,13 @@
   },
   "homepage": "https://github.com/SafeMarket/amorph-bignumber#readme",
   "devDependencies": {
+    "bignumber.js": "^3.1.2",
     "chai": "^3.5.0",
     "mocha": "^3.2.0"
   },
   "dependencies": {
     "amorph-converter": "^2.0.0",
     "amorph-hex": "^3.0.0",
-    "bignumber.js": "^3.0.1",
     "defunction": "^5.5.0"
   }
 }
